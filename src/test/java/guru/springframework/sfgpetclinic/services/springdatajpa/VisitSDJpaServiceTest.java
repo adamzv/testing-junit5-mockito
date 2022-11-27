@@ -49,7 +49,7 @@ class VisitSDJpaServiceTest {
     @Test
     void findById() {
         when(visitRepository.findById(1L)).thenReturn(Optional.of(visit));
-        when(visitRepository.findById(2L)).thenReturn(Optional.ofNullable(null));
+        when(visitRepository.findById(2L)).thenReturn(Optional.empty());
 
         assertThat(service.findById(1L)).isNotNull();
         assertThat(service.findById(2L)).isNull();
